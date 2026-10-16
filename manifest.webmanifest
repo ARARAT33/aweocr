@@ -1,0 +1,11 @@
+{
+  "name": "AWEOCR — Document Workspace",
+  "short_name": "AWEOCR",
+  "description": "Private browser-based OCR for images and PDFs",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#101827",
+  "icons": []
+}
