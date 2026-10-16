@@ -4,7 +4,7 @@ AWEOCR is a static, browser-first document workspace for GitHub Pages. It combin
 
 ## Workspace
 
-- **View:** open local images, videos, audio, PDFs, plain text, CSV, JSON, HTML and other files. Browser support determines which formats can be previewed. Unsupported Office formats can still be downloaded; a full DOCX/XLSX/PPTX renderer is not bundled.
+- **View:** open local images, videos, audio, PDFs, plain text, CSV, JSON, HTML and other files. Browser support determines which formats can be previewed. DOCX preview uses Mammoth.js and XLS/XLSX preview uses SheetJS loaded on demand from a CDN; the first worksheet can be exported as CSV. PowerPoint and some proprietary formats can still be downloaded but do not have a full renderer.
 - **Create:** write and export text documents, HTML pages, JSON, PNG drawings, and CSV spreadsheets that open in Excel-compatible spreadsheet software.
 - **OCR:** recognize images and scanned PDFs with Tesseract.js, edit results, count words/characters, and export TXT, Word-compatible HTML-in-DOC, JSON, or print/save PDF.
 - **Language models:** select a Tesseract language code from the model list. The model is fetched on demand from the upstream CDN. The initial site download does not contain every model.
