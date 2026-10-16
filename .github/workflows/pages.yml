@@ -16,6 +16,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("index.html").read_text(encoding="utf-8")
+          match = re.search(r'<script type="module">(.*?)</script>', html, re.S)
+          if not match:
+              raise SystemExit("Inline application module not found")
+          Path("/tmp/awenocr-app.mjs").write_text(match.group(1), encoding="utf-8")
+          PY
+          node --check /tmp/awenocr-app.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
